@@ -1,0 +1,9 @@
+name: Build canceller
+description: Plugin that conditionally cancels the current build
+author: https://github.com/pinkerton
+requirements: []
+configuration:
+  properties:
+    should-run:
+      type: string
+  additionalProperties: false

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Example trigger hook script
+
+# Check condition
+if [[ "${SHOULD_RUN}" != "true" ]]; then
+  echo "Condition not met, cancelling the job."
+  # Cancel the job
+  buildkite-agent job update --status canceled
+
+  # Next, try changing the agent workflow
+  exit 1
+fi
+
+echo "Condition met, continuing with the job."
