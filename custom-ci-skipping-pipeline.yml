@@ -1,0 +1,3 @@
+steps:
+  - name: ":check: pipeline successfully skipped"
+    command: echo "Skipped tests - this is the replacement pipeline file"

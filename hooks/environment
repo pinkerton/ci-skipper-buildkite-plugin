@@ -6,9 +6,11 @@
 if [[ "${SHOULD_RUN}" != "true" ]]; then
   echo "CI does not need to run; cancelling now"
   # Cancel the job
-  buildkite-agent job update --status canceled
+#   buildkite-agent job update --status canceled
 
   # Next, try changing the agent workflow
+  echo "Trying to skip the pipeline"
+  buildkite-agent pipeline upload custom-ci-skipping-pipeline.yml
   exit 1
 fi
 
