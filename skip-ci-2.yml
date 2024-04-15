@@ -1,3 +1,4 @@
 steps:
-  - command: echo "skipping CI"
+  - name: "THE GREAT CI SKIPPER"
+    command: echo "skipping CI"
     skip: "Skipping CI because Graphite told us to"
