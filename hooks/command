@@ -1,5 +1,7 @@
 #!/bin/bash
 
+buildkite-agent meta-data set "graphite-should-skip-ci" "true"
+
 # Check condition
 if [[ "${SHOULD_RUN}" != "true" ]]; then
   echo "CI does not need to run; skipping now"
