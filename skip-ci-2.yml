@@ -1,2 +1,3 @@
 steps:
-  - skip: true
+  - name: "skipping pipeline"
+    skip: true
