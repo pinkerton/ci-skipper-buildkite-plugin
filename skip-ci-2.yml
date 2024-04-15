@@ -1,4 +1,4 @@
 steps:
-  - name: $BUILDKITE_LABEL
+  - name: Rest of your tests
     command: echo "skipping CI"
     skip: "Skipping CI because Graphite told us to"
