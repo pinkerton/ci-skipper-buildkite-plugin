@@ -10,6 +10,7 @@ if [[ "${SHOULD_RUN}" != "true" ]]; then
   # echo "Trying to skip the pipeline"
   # buildkite-agent pipeline upload --replace "${BUILDKITE_PLUGINS_PATH}/github-com-pinkerton-ci-skipper-buildkite-plugin-main/custom-ci-skipping-pipeline.yml"
   buildkite-agent pipeline upload --replace "${BUILDKITE_PLUGINS_PATH}/github-com-pinkerton-ci-skipper-buildkite-plugin-main/skip-ci-2.yml"
+  echo "build should be skipped"
   exit 0
 fi
 
