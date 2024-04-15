@@ -1,16 +1,18 @@
 #!/bin/bash
 
-# Example trigger hook script
-
 # Check condition
 if [[ "${SHOULD_RUN}" != "true" ]]; then
-  echo "CI does not need to run; cancelling now"
+  echo "CI does not need to run; skipping now"
   # Cancel the job
 #   buildkite-agent job update --status canceled
 
   # Next, try changing the agent workflow
-  echo "Trying to skip the pipeline"
-  buildkite-agent pipeline upload --replace "${BUILDKITE_PLUGINS_PATH}/github-com-pinkerton-ci-skipper-buildkite-plugin-main/custom-ci-skipping-pipeline.yml"
+  # echo "Trying to skip the pipeline"
+  # buildkite-agent pipeline upload --replace "${BUILDKITE_PLUGINS_PATH}/github-com-pinkerton-ci-skipper-buildkite-plugin-main/custom-ci-skipping-pipeline.yml"
+  buildkite-agent pipeline upload <<YAML
+  steps:
+      skip: true
+YAML
   exit 0
 fi
 
