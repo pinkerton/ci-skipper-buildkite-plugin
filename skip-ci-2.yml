@@ -1,2 +1,2 @@
 steps:
-  skip: true
+  - skip: true
