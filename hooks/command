@@ -9,10 +9,7 @@ if [[ "${SHOULD_RUN}" != "true" ]]; then
   # Next, try changing the agent workflow
   # echo "Trying to skip the pipeline"
   # buildkite-agent pipeline upload --replace "${BUILDKITE_PLUGINS_PATH}/github-com-pinkerton-ci-skipper-buildkite-plugin-main/custom-ci-skipping-pipeline.yml"
-  buildkite-agent pipeline upload <<YAML
-  steps:
-      skip: true
-YAML
+  buildkite-agent pipeline upload --replace "${BUILDKITE_PLUGINS_PATH}/github-com-pinkerton-ci-skipper-buildkite-plugin-main/skip-ci-2.yml"
   exit 0
 fi
 
