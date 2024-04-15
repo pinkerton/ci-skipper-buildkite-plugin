@@ -15,3 +15,4 @@ if [[ "${SHOULD_RUN}" != "true" ]]; then
 fi
 
 echo "Condition met, continuing with the job."
+exit 0
