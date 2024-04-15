@@ -1,4 +1,4 @@
 steps:
-  - name: "THE GREAT CI SKIPPER"
+  - name: $BUILDKITE_LABEL
     command: echo "skipping CI"
     skip: "Skipping CI because Graphite told us to"
