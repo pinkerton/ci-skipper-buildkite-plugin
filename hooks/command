@@ -11,7 +11,9 @@ if [[ "${SHOULD_RUN}" != "true" ]]; then
   # Next, try changing the agent workflow
   # echo "Trying to skip the pipeline"
   # buildkite-agent pipeline upload --replace "${BUILDKITE_PLUGINS_PATH}/github-com-pinkerton-ci-skipper-buildkite-plugin-main/custom-ci-skipping-pipeline.yml"
-  buildkite-agent annotate ":graphite: This PR will not run CI until it is in the bottom of the stack or is manually triggered." --style "warning" --context "graphite" --job $BUILDKITE_JOB_ID
+  buildkite-agent annotate ":graphite: This PR is in the middle of a [stack](https://stacking.dev)
+                            and will not run CI until it configured to do so, or is manually triggered." 
+                            --style "warning" --context "graphite" --job $BUILDKITE_JOB_ID
   buildkite-agent pipeline upload --replace "${BUILDKITE_PLUGINS_PATH}/github-com-pinkerton-ci-skipper-buildkite-plugin-main/skip-ci-2.yml"
   echo "build should be skipped"
   exit 0
